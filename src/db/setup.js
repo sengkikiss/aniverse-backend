@@ -113,9 +113,9 @@ const MOVIES = [
 
 function seedMovies() {
   // Clear existing to avoid duplicates on re-run
- // db.run("DELETE FROM movie_tags");
-  //db.run("DELETE FROM movie_genres");
- // db.run("DELETE FROM movies");
+  db.run("DELETE FROM movie_tags");
+  db.run("DELETE FROM movie_genres");
+  db.run("DELETE FROM movies");
 
   let done = 0;
   MOVIES.forEach(m => {

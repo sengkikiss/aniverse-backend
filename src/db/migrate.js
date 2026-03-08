@@ -34,6 +34,6 @@ db.serialize(() => {
   )`, (err) => {
     if (err) console.error("episodes table:", err.message);
     else console.log("✅ episodes table ready");
-    setTimeout(() => { db.close(); console.log("✅ DB migration done!\n"); }, 300);
+    setTimeout(() => { console.log("✅ DB migration done!\n"); }, 300);
   });
 });

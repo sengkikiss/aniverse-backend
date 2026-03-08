@@ -19,6 +19,9 @@ const PORT = process.env.PORT || 5000;
   if (!fs.existsSync(d)) fs.mkdirSync(path.resolve(d), { recursive: true });
 });
 
+// Auto-initialize DB tables on startup
+try { require("./db/setup.js"); } catch(e) { console.log("DB init:", e.message); }
+
 app.use(cors({ origin: process.env.FRONTEND_URL || "http://localhost:3000", credentials: true }));
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
